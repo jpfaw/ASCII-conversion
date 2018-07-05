@@ -2,9 +2,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-#define ARRAY_SIZE 512
 #define DEBUG 0 // 0: false 1: true
 
 void print_red_color(const char *text);
@@ -86,31 +84,9 @@ int main(void){
 }
 
 /* -----------------------------------------------
- * データをチェックする関数
- * $0 チェックしたいデータ
- * $1 理想の値
- -----------------------------------------------*/
-void data_check(const long data, const long assumption) {
-    printf("CHECK: ");
-    if(data == assumption){
-        print_green_color("OK\n");
-    } else {
-        print_red_color("NG\n");
-    }
-}
-
-/* -----------------------------------------------
  * 文字列を緑色で出力する関数
  * $0 出力したい文字列
  -----------------------------------------------*/
 void print_green_color(const char *text) {
     printf("\x1b[32m%s\x1b[39m", text);
-}
-
-/* -----------------------------------------------
- * 文字列を赤色で出力する関数
- * $0 出力したい文字列
- -----------------------------------------------*/
-void print_red_color(const char *text) {
-    printf("\x1b[31m%s\x1b[39m", text);
 }
